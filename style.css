@@ -66,6 +66,22 @@ body {
   overflow-x: hidden;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-2);
+}
+
 a {
   text-decoration: none;
 }
@@ -509,10 +525,10 @@ footer[id] {
   /* border thickness */
   border-radius: 25px;
   background: conic-gradient(from 0deg,
-      #00f,
-      #00ffff,
-      #007bff,
-      #00f);
+      #7b5cff,
+      #ff5ca8,
+      #9c73ff,
+      #7b5cff);
   animation: rotateBorder 4s linear infinite;
   z-index: 0;
 }
@@ -711,6 +727,15 @@ footer[id] {
   border-radius: 1rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.about-card:hover,
+.project-card:hover,
+.project-feature:hover {
+  transform: translateY(-5px);
+  border-color: rgba(123, 92, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .mini-label {
@@ -791,6 +816,14 @@ footer[id] {
   border-radius: 1rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.experience-card:hover,
+.timeline-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(123, 92, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .experience-card .big-value {
@@ -1287,6 +1320,13 @@ footer[id] {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.88);
   font-size: 0.82rem;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.project-tags span:hover {
+  transform: scale(1.05);
+  background: rgba(123, 92, 255, 0.15);
+  border-color: rgba(123, 92, 255, 0.3);
 }
 
 .project-meta {
@@ -1389,7 +1429,9 @@ footer[id] {
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1rem;
-    background: rgba(10, 10, 12, 0.96);
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
     flex-direction: column;
     gap: 0.85rem;
@@ -1521,8 +1563,13 @@ footer[id] {
     height: 275px;
   }
 
-  .cta-btn {
-    display: none;
+  /* Make CTA visible and appropriately positioned on mobile */
+  .hero-grid .visual-col .cta-btn {
+    position: static;
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
   }
 
   .footer-bottom {
