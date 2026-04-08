@@ -91,3 +91,24 @@ if (navLinks.length && sectionTargets.length) {
 
   sectionTargets.forEach((section) => observer.observe(section));
 }
+
+// Animation Observer
+const animationElements = document.querySelectorAll(".reveal-up, .reveal-fade, .text-reveal");
+
+const animationObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        // Optional: uncomment below to stop observing once it has appeared
+        // observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    rootMargin: "0px 0px -10% 0px",
+    threshold: 0,
+  }
+);
+
+animationElements.forEach((el) => animationObserver.observe(el));

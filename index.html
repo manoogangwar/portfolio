@@ -9,11 +9,11 @@
         content="Portfolio of Munendra Pal, a Python and Django backend developer building REST APIs, authentication systems, and database-driven applications." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -24,49 +24,67 @@
                     <a href="#home" class="brand" aria-label="name">Munendra <span class="smiley">ッ</span></a>
                     <div class="availability" aria-label="Job availability status"><span class="dot"
                             aria-hidden="true"></span><span>Open to Junior Backend Roles</span></div>
-                    <div class="menu-wrap"><span class="label">Menu</span><button class="menu-btn" type="button"
-                            aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav"><span></span></button></div>
-                    <nav class="right-nav" id="site-nav" aria-label="Primary"><a href="#about">About</a><a
-                            href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+                    <div class="nav-actions">
+                        <a href="resume.pdf" class="outline-btn resume-btn" download aria-label="Download Resume">
+                            <span>Resume</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                        <div class="menu-wrap"><span class="label">Menu</span><button class="menu-btn" type="button"
+                                aria-label="Toggle navigation menu" aria-expanded="false"
+                                aria-controls="site-nav"><span></span></button></div>
+                    </div>
+                    <nav class="right-nav" id="site-nav" aria-label="Primary">
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
                 </header>
 
                 <section class="hero-grid">
                     <div class="content-col">
-                        <div class="social-proof">
+                        <div class="social-proof reveal-fade">
                             <div class="d-flex align-items-center gap-3">
                                 <div class="avatar-stack" aria-hidden="true"><span></span><span></span><span></span>
                                 </div>
-                            <div class="clients-count">1+</div>
+                                <div class="clients-count">1+</div>
                             </div>
                             <div class="clients-label">Years Building with Python & Django</div>
                         </div>
 
-                        <h1 class="hero-title"><span class="line-break">MUNENDRA</span><span
-                                class="line-break accent">PAL</span></h1>
-                        <p class="hero-copy">Python and Django backend developer with hands-on experience building REST
+                        <h1 class="hero-title text-reveal stagger-1"><span class="line-break">it's Me</span><span
+                                class="line-break accent">Munendra</span></h1>
+
+                        <p class="hero-copy reveal-up stagger-2">Python and Django backend developer with hands-on
+                            experience building REST
                             APIs, authentication systems, CRUD modules, and database-driven web applications for
                             real-world products.</p>
 
-                        <div class="stats-row">
-                            <div class="stat-item"><span class="stat-number">3+</span><span
-                                    class="stat-label">Backend Projects</span></div>
-                            <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Professional
+                        <div class="stats-row reveal-up stagger-3">
+                            <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Backend
+                                    Projects</span></div>
+                            <div class="stat-item"><span class="stat-number">2</span><span
+                                    class="stat-label">Professional
                                     Roles</span></div>
                             <div class="stat-item"><span class="stat-number">1+</span><span class="stat-label">Years of
                                     Experience</span></div>
                         </div>
                     </div>
                     <div class="visual-col">
-                        <div class="portrait-wrap">
+                        <div class="portrait-wrap reveal-up stagger-4">
                             <div class="portrait-glow" aria-hidden="true"></div>
                             <div class="portrait" aria-hidden="true">
-                                <img src="Mnau.jpeg" alt="Munendra Portrait" class="portrait-img">
+                                <img src="Mnau.webp" alt="Munendra Portrait" class="portrait-img">
                             </div>
                         </div>
 
-                        <a class="cta-btn" href="mailto:manugangwar.dev@gmail.com"><span class="cta-icon" aria-hidden="true"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                    stroke-linecap="round" stroke-linejoin="round">
+                        <a class="cta-btn reveal-up stagger-5" href="mailto:manugangwar.dev@gmail.com"><span
+                                class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <rect x="3" y="5" width="18" height="16" rx="3"></rect>
                                     <path d="M16 3v4M8 3v4M3 10h18"></path>
                                 </svg></span><span>Email Me</span></a>
@@ -77,23 +95,28 @@
 
         <section class="section-shell" id="about">
             <div class="about-section container-fluid">
-                <div class="section-tag">About Me</div>
+                <div class="section-tag reveal-fade">About Me</div>
                 <div class="about-grid">
                     <div>
-                        <h2 class="about-title">Building reliable <span class="accent">backend systems</span> with
+                        <h2 class="about-title text-reveal">Building reliable <span class="accent">backend
+                                systems</span> with
                             Python, Django, and REST APIs.</h2>
-                        <p class="about-copy">I&rsquo;m Munendra Pal, a Python and Django backend developer based in New
+                        <p class="about-copy reveal-up stagger-1">I&rsquo;m Munendra Pal, a Python and Django backend
+                            developer based in New
                             Delhi, India. I focus on authentication flows, CRUD modules, REST API development, and
                             database-backed web applications that solve practical business and community needs.</p>
-                        <p class="about-copy">With 1 year of professional experience, I&rsquo;ve worked on live
+                        <p class="about-copy reveal-up stagger-2">With 1 year of professional experience, I&rsquo;ve
+                            worked on live
                             production projects, collaborated with design teams, and continued strengthening my backend
                             foundations while actively pursuing a junior backend developer role.</p>
-                        <ul class="about-points">
-                            <li>Focused on Django backend development, REST APIs, and secure authentication modules.</li>
+                        <ul class="about-points reveal-up stagger-3">
+                            <li>Focused on Django backend development, REST APIs, and secure authentication modules.
+                            </li>
                             <li>Comfortable with MySQL, SQLite, Django ORM, and practical CRUD workflows.</li>
-                            <li>Interested in clean architecture, backend performance, and real-world product delivery.</li>
+                            <li>Interested in clean architecture, backend performance, and real-world product delivery.
+                            </li>
                         </ul>
-                        <div class="about-actions">
+                        <div class="about-actions reveal-up stagger-4">
                             <a class="cta-btn position-static" href="#contact"><span class="cta-icon"
                                     aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -104,19 +127,22 @@
                         </div>
                     </div>
 
-                    <div class="about-card-stack">
+                    <div class="about-card-stack reveal-up stagger-5">
                         <div class="about-card"><span class="mini-label">Experience</span><span class="big-value">1+
                                 Years</span>
-                            <p>Professional backend development experience across internship and full-time agency work.</p>
+                            <p>Professional backend development experience across internship and full-time agency work.
+                            </p>
                         </div>
                         <div class="about-card"><span class="mini-label">Core Stack</span><span class="big-value">Python
                                 · Django · DRF</span>
                             <p>Building API-ready backend systems with database design, authentication, and structured
                                 application logic.</p>
                         </div>
-                        <div class="about-card"><span class="mini-label">Current Focus</span><span class="big-value">Junior
+                        <div class="about-card"><span class="mini-label">Current Focus</span><span
+                                class="big-value">Junior
                                 Backend Role</span>
-                            <p>Growing in REST API design, backend architecture, and production-ready Django development.</p>
+                            <p>Growing in REST API design, backend architecture, and production-ready Django
+                                development.</p>
                         </div>
                     </div>
                 </div>
@@ -125,19 +151,22 @@
 
         <section class="section-shell" id="experience">
             <div class="experience-section container-fluid">
-                <div class="section-tag">Experience & Skills</div>
+                <div class="section-tag reveal-fade">Experience & Skills</div>
                 <div class="experience-grid">
                     <div>
-                        <h2 class="experience-title">A practical <span class="accent">backend journey</span> built on
+                        <h2 class="experience-title text-reveal">A practical <span class="accent">backend journey</span>
+                            built on
                             live projects.</h2>
-                        <p class="experience-copy">I&rsquo;ve worked across internship and agency environments using
+                        <p class="experience-copy reveal-up stagger-1">I&rsquo;ve worked across internship and agency
+                            environments using
                             Python, Django, Django REST Framework, MySQL, and SQLite to build backend modules,
                             role-based access systems, REST APIs, and database-driven application features.</p>
-                        <p class="experience-copy">My experience combines backend problem-solving with production
+                        <p class="experience-copy reveal-up stagger-2">My experience combines backend problem-solving
+                            with production
                             delivery, version control, team collaboration, and implementation support for frontend-ready
                             products.</p>
 
-                        <div class="experience-highlights">
+                        <div class="experience-highlights reveal-up stagger-3">
                             <div class="experience-card"><span class="mini-label">Experience</span><span
                                     class="big-value">1+ Years</span>
                                 <p>Production-focused Python and Django development through agency work and previous
@@ -161,7 +190,7 @@
                         </div>
                     </div>
 
-                    <div class="timeline-wrap">
+                    <div class="timeline-wrap reveal-up stagger-4">
                         <article class="timeline-card">
                             <span class="timeline-meta">Sep 2025 - Feb 2026</span>
                             <h3 class="timeline-role">Python / Django Developer - AgencyEleven100</h3>
@@ -202,19 +231,22 @@
             <div class="projects-section container-fluid">
                 <div class="projects-head">
                     <div>
-                        <div class="section-tag">Projects</div>
-                        <h2 class="projects-title">Selected work that reflects my <span class="accent">backend
+                        <div class="section-tag reveal-fade">Projects</div>
+                        <h2 class="projects-title text-reveal">Selected work that reflects my <span
+                                class="accent">backend
                                 development</span>.</h2>
-                        <p class="projects-copy">These projects highlight my experience with Django, REST APIs,
+                        <p class="projects-copy reveal-up stagger-1">These projects highlight my experience with Django,
+                            REST APIs,
                             authentication systems, MySQL/SQLite, payment integration, and practical application logic
                             built for real use cases.</p>
                     </div>
-                    <div class="projects-actions"><a class="outline-btn" href="#contact">Let&rsquo;s Build Something</a>
+                    <div class="projects-actions reveal-up stagger-2"><a class="outline-btn" href="#contact">Let&rsquo;s
+                            Build Something</a>
                     </div>
                 </div>
 
                 <div class="projects-grid">
-                    <article class="project-feature">
+                    <article class="project-feature reveal-up stagger-1">
                         <div>
                             <div class="project-preview" aria-hidden="true">
                                 <div class="preview-window">
@@ -243,28 +275,31 @@
                             <p>Built a community-driven platform that supports user registration, profile management,
                                 and advanced filtered search to help members connect more easily.</p>
                             <div class="project-tags">
-                                <span>Django</span><span>Python</span><span>MySQL</span><span>Authentication</span><span>Search Filters</span>
+                                <span>Django</span><span>Python</span><span>MySQL</span><span>Authentication</span><span>Search
+                                    Filters</span>
                             </div>
                             <div class="project-meta">Highlights: user profiles, community directory logic, advanced
                                 filtering, and backend-driven data handling.</div>
                         </div>
                         <div class="project-links"><a class="ghost-link" href="https://haidakhandi.org/" target="_blank"
-                                rel="noreferrer">Live Demo</a><a class="ghost-link" href="https://www.linkedin.com/in/munendra-pal"
-                                target="_blank" rel="noreferrer">LinkedIn</a></div>
+                                rel="noreferrer">Live Demo</a><a class="ghost-link"
+                                href="https://www.linkedin.com/in/munendra-pal" target="_blank"
+                                rel="noreferrer">LinkedIn</a></div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card reveal-up stagger-2">
                         <span class="mini-label">Project 02</span>
                         <h3 class="project-title">AWDORG Foundation Crowdfunding Platform</h3>
                         <p>Contributed to backend development for a crowdfunding platform, including Razorpay payment
                             gateway integration and support for fundraising workflows.</p>
                         <div class="project-tags"><span>Django</span><span>Razorpay</span><span>Payments</span></div>
-                        <div class="project-meta">Focus: payment integration, selected backend modules, fundraising flow,
+                        <div class="project-meta">Focus: payment integration, selected backend modules, fundraising
+                            flow,
                             and secure transaction handling.</div>
                         <div class="project-links"><a class="ghost-link" href="#contact">Ask for Details</a></div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card reveal-up stagger-3">
                         <span class="mini-label">Project 03</span>
                         <h3 class="project-title">Banking Automation System</h3>
                         <p>Created a Python and MySQL based banking system to manage user accounts, balances,
@@ -281,24 +316,26 @@
 
         <section class="section-shell" id="contact">
             <div class="contact-section container-fluid">
-                <div class="section-tag">Get In Touch</div>
+                <div class="section-tag reveal-fade">Get In Touch</div>
                 <div class="contact-grid">
                     <div>
-                        <h2 class="contact-title">Let&rsquo;s build something <span class="accent">useful
+                        <h2 class="contact-title text-reveal">Let&rsquo;s build something <span class="accent">useful
                                 together</span>.</h2>
-                        <p class="contact-copy">I&rsquo;m actively looking for a Junior Backend Developer role where I
+                        <p class="contact-copy reveal-up stagger-1">I&rsquo;m actively looking for a Junior Backend
+                            Developer role where I
                             can contribute to real-world projects, keep learning, and build dependable backend systems
                             with Python and Django.</p>
-                        <ul class="contact-points">
+                        <ul class="contact-points reveal-up stagger-2">
                             <li>Python and Django backend development for real-world applications.</li>
                             <li>REST API development, integration, and backend module implementation.</li>
                             <li>User authentication, CRUD workflows, and database operations.</li>
                             <li>Open to internships, junior roles, and collaborative backend projects.</li>
                         </ul>
-                        <div class="projects-actions">
-                            <a class="cta-btn position-static" href="mailto:manugangwar.dev@gmail.com"><span class="cta-icon"
-                                    aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="projects-actions reveal-up stagger-3">
+                            <a class="cta-btn position-static" href="mailto:manugangwar.dev@gmail.com"><span
+                                    class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round">
                                         <path d="M4 4h16v16H4z"></path>
                                         <path d="m4 8 4 3 4-3 4 3"></path>
                                     </svg></span><span>Email Me</span></a>
@@ -306,7 +343,7 @@
                         </div>
                     </div>
 
-                    <div class="contact-card">
+                    <div class="contact-card reveal-up stagger-4">
                         <div class="contact-info-grid">
                             <div class="contact-info-item"><span class="mini-label">Email</span><a
                                     href="mailto:manugangwar.dev@gmail.com">manugangwar.dev@gmail.com</a></div>
@@ -329,8 +366,8 @@
                                 <input id="email" type="email" placeholder="Enter your email">
                             </div>
                             <div>
-                                <label for="message">Project Message</label>
-                                <textarea id="message" placeholder="Tell me about your project or idea"></textarea>
+                                <label for="message">Message</label>
+                                <textarea id="message" placeholder="Your message Hare..."></textarea>
                             </div>
                             <button class="cta-btn position-static" type="submit"><span class="cta-icon"
                                     aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -348,14 +385,19 @@
             <div class="footer-section container-fluid">
                 <div class="footer-top">
                     <div class="footer-intro">
-                        <div class="section-tag">Footer</div>
-                        <h2 class="footer-title">Ready to contribute to practical backend products and growing teams.</h2>
-                        <p class="footer-copy">I build Django applications, backend modules, REST APIs, and
-                            database-driven features with a focus on clean logic, reliability, and continuous learning.</p>
-                        <div class="footer-actions">
-                            <a class="cta-btn position-static" href="mailto:manugangwar.dev@gmail.com"><span class="cta-icon"
-                                    aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="section-tag reveal-fade">Footer</div>
+                        <h2 class="footer-title text-reveal">Ready to contribute to practical backend products and
+                            growing teams.
+                        </h2>
+                        <p class="footer-copy reveal-up stagger-1">I build Django applications, backend modules, REST
+                            APIs, and
+                            database-driven features with a focus on clean logic, reliability, and continuous learning.
+                        </p>
+                        <div class="footer-actions reveal-up stagger-2">
+                            <a class="cta-btn position-static" href="mailto:manugangwar.dev@gmail.com"><span
+                                    class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round">
                                         <path d="M22 2 11 13"></path>
                                         <path d="M22 2 15 22 11 13 2 9 22 2z"></path>
                                     </svg></span><span>Contact Me</span></a>
@@ -363,7 +405,7 @@
                         </div>
                     </div>
 
-                    <div class="footer-grid">
+                    <div class="footer-grid reveal-up stagger-3">
                         <div class="footer-card">
                             <span class="mini-label">Navigation</span>
                             <div class="footer-links">
@@ -391,7 +433,8 @@
                                 <span class="status-dot" aria-hidden="true"></span>
                                 <span>Actively seeking junior backend developer opportunities</span>
                             </div>
-                            <p>Best fit for Django backend work, REST API development, backend support, and growth-focused engineering teams.</p>
+                            <p>Best fit for Django backend work, REST API development, backend support, and
+                                growth-focused engineering teams.</p>
                             <a class="ghost-link" href="mailto:manugangwar.dev@gmail.com">manugangwar.dev@gmail.com</a>
                         </div>
                     </div>

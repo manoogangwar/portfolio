@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <h1 class="hero-title">
+  <span id="typing-text"></span>
+</h1>
+
+<!-- <script>
+    const textElement = document.getElementById('typing-text');
+const text = "Python Full Stack Developer";
+let index = 0;
+
+function type() {
+  if (index < text.length) {
+    textElement.textContent += text[index];
+    index++;
+    setTimeout(type, 100); // typing speed in milliseconds
+  }
+}
+
+type();
+</script> -->
+
+<script>
+const text = "it's Me Munendra";
+let index = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const element = document.getElementById("typing-text");
+
+  if (isDeleting) {
+    element.textContent = text.substring(0, index--);
+  } else {
+    element.textContent = text.substring(0, index++);
+  }
+
+  // Speed control
+  let speed = isDeleting ? 50 : 100;
+
+  // When typing complete
+  if (index === text.length + 1) {
+    isDeleting = true;
+    speed = 1000; // pause before delete
+  }
+
+  // When deleting complete
+  if (index === 0) {
+    isDeleting = false;
+    speed = 500; // pause before typing again
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+// Start
+typeEffect();
+</script>
+</body>
+</html>
