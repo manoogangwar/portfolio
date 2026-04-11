@@ -70,14 +70,17 @@ body {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   border: 2px solid var(--color-bg);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary-2);
 }
@@ -1593,6 +1596,172 @@ footer[id] {
     flex-direction: column;
   }
 }
+
+/* --- New Sidebar Nav Styles --- */
+
+/* Hamburger Button */
+.hamburger-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.hamburger-btn:hover {
+  transform: scale(1.05);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Modal Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85); /* Darker overlay for better contrast */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Menu (Full Screen text container) */
+.modal-menu {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.menu-overlay.active .modal-menu {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-header {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 0;
+  z-index: 10;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.close-btn svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  opacity: 0.7;
+}
+
+.modal-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.modal-nav a {
+  color: #fff;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.1;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.modal-nav:hover a {
+  opacity: 0.25;
+}
+
+.modal-nav a:hover,
+.modal-nav a.active {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.modal-nav a::after {
+  display: none; /* Removed the small underline for this bold style */
+}
+
+.modal-footer {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.modal-download-btn,
+.modal-hire-btn {
+  width: auto;
+  position: static !important;
+}
+
+@media (max-width: 767.98px) {
+  .modal-footer {
+    flex-direction: column;
+    width: 85%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-download-btn,
+  .modal-hire-btn {
+    width: 100%;
+  }
+}
+
 
 /* Animations added via JS */
 .reveal-up {

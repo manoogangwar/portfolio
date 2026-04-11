@@ -1,72 +1,57 @@
-const topbar = document.querySelector(".topbar");
-const menuButton = document.querySelector(".menu-btn");
-const nav = document.querySelector("#site-nav");
-const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
-const sectionTargets = navLinks
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const closeMenuBtn = document.getElementById("close-menu-btn");
+const modalMenu = document.getElementById("modal-menu");
+const menuOverlay = document.getElementById("menu-overlay");
+const modalNavLinks = [...document.querySelectorAll(".modal-nav a[href^='#']")];
+const modalHireBtn = document.querySelector(".modal-hire-btn");
+
+const sectionTargets = modalNavLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 
-if (topbar && menuButton && nav) {
-  const mobileMedia = window.matchMedia("(max-width: 991.98px)");
+const openMenu = () => {
+  modalMenu.classList.add("active");
+  menuOverlay.classList.add("active");
+  modalMenu.setAttribute("aria-hidden", "false");
+  if (hamburgerBtn) hamburgerBtn.setAttribute("aria-expanded", "true");
+};
 
-  const closeMenu = () => {
-    topbar.classList.remove("nav-open");
-    menuButton.setAttribute("aria-expanded", "false");
-  };
+const closeMenu = () => {
+  modalMenu.classList.remove("active");
+  menuOverlay.classList.remove("active");
+  modalMenu.setAttribute("aria-hidden", "true");
+  if (hamburgerBtn) hamburgerBtn.setAttribute("aria-expanded", "false");
+};
 
-  const openMenu = () => {
-    topbar.classList.add("nav-open");
-    menuButton.setAttribute("aria-expanded", "true");
-  };
-
-  const syncMenuState = () => {
-    if (!mobileMedia.matches) {
-      closeMenu();
-    }
-  };
-
-  menuButton.addEventListener("click", () => {
-    const isOpen = topbar.classList.contains("nav-open");
-    if (isOpen) {
-      closeMenu();
-      return;
-    }
-
-    openMenu();
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!mobileMedia.matches) {
-      return;
-    }
-
-    if (!topbar.contains(event.target)) {
+if (hamburgerBtn && closeMenuBtn && modalMenu && menuOverlay) {
+  hamburgerBtn.addEventListener("click", openMenu);
+  closeMenuBtn.addEventListener("click", closeMenu);
+  
+  menuOverlay.addEventListener("click", (e) => {
+    if (e.target === menuOverlay) {
       closeMenu();
     }
   });
+
+  modalNavLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+  
+  if (modalHireBtn) {
+    modalHireBtn.addEventListener("click", closeMenu);
+  }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && menuOverlay.classList.contains("active")) {
       closeMenu();
-      menuButton.focus();
+      hamburgerBtn.focus();
     }
   });
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (mobileMedia.matches) {
-        closeMenu();
-      }
-    });
-  });
-
-  mobileMedia.addEventListener("change", syncMenuState);
-  syncMenuState();
 }
 
-if (navLinks.length && sectionTargets.length) {
+if (modalNavLinks.length && sectionTargets.length) {
   const setActiveLink = (id) => {
-    navLinks.forEach((link) => {
+    modalNavLinks.forEach((link) => {
       const isActive = link.getAttribute("href") === `#${id}`;
       link.classList.toggle("active", isActive);
       link.setAttribute("aria-current", isActive ? "page" : "false");
